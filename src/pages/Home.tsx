@@ -1,8 +1,13 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Ruler, Home as HomeIcon, Hammer } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import InteractiveGallery from '../components/InteractiveGallery';
 
 export default function Home() {
+    const { scrollY } = useScroll();
+    const y = useTransform(scrollY, [0, 500], [0, 150]);
+    const scale = useTransform(scrollY, [0, 500], [1, 1.2]);
+
     const fadeInUp = {
         hidden: { opacity: 0, y: 60 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
@@ -22,7 +27,10 @@ export default function Home() {
         <div className="w-full">
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
+                <motion.div
+                    style={{ y, scale }}
+                    className="absolute inset-0 z-0"
+                >
                     <div className="absolute inset-0 bg-black/40 z-10"></div>
                     {/* Video Placeholder */}
                     <div className="w-full h-full bg-gray-900 flex items-center justify-center text-gray-700">
@@ -33,7 +41,7 @@ export default function Home() {
                             className="w-full h-full object-cover"
                         />
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
                     <motion.h1
@@ -101,6 +109,9 @@ export default function Home() {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Interactive Gallery */}
+            <InteractiveGallery />
 
             {/* Services Grid */}
             <section className="py-24 bg-neutral-50 px-4">

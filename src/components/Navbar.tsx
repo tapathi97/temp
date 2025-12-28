@@ -73,22 +73,22 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="absolute top-full left-0 right-0 bg-white shadow-lg md:hidden"
+                        className="fixed inset-0 top-[72px] bg-white z-40 md:hidden flex flex-col"
                     >
-                        <div className="flex flex-col px-4 py-8 space-y-6 text-center">
+                        <div className="flex flex-col px-6 py-12 space-y-8 text-center h-full">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className="text-lg font-serif font-medium text-gray-800 hover:text-black transition-colors"
+                                    className="text-2xl font-serif font-medium text-gray-800 hover:text-black transition-colors"
                                 >
                                     {link.name}
                                 </Link>
                             ))}
-                            <div className="flex justify-center space-x-6 pt-6 border-t border-gray-100">
-                                <a href="#" className="text-gray-500 hover:text-black"><Instagram size={20} /></a>
-                                <a href="#" className="text-gray-500 hover:text-black"><Phone size={20} /></a>
-                                <a href="#" className="text-gray-500 hover:text-black"><Mail size={20} /></a>
+                            <div className="flex justify-center space-x-8 pt-12 mt-auto border-t border-gray-100">
+                                <a href="#" className="text-gray-500 hover:text-black p-2"><Instagram size={24} /></a>
+                                <a href="#" className="text-gray-500 hover:text-black p-2"><Phone size={24} /></a>
+                                <a href="#" className="text-gray-500 hover:text-black p-2"><Mail size={24} /></a>
                             </div>
                         </div>
                     </motion.div>

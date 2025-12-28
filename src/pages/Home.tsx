@@ -40,7 +40,7 @@ export default function Home() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-serif text-white font-bold mb-6 tracking-tight leading-tight"
+                        className="text-4xl md:text-7xl lg:text-8xl font-serif text-white font-bold mb-6 tracking-tight leading-tight"
                     >
                         Shaping Skylines, <br />
                         <span className="text-gray-200">Crafting Sanctuaries.</span>
@@ -49,7 +49,7 @@ export default function Home() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1 }}
-                        className="text-lg md:text-xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto mb-10"
+                        className="text-base md:text-xl text-gray-300 font-light tracking-wide max-w-2xl mx-auto mb-10"
                     >
                         A minimal luxury architectural experience.
                     </motion.p>
@@ -69,7 +69,7 @@ export default function Home() {
             </section>
 
             {/* About Teaser */}
-            <section className="py-24 md:py-32 bg-white px-4">
+            <section className="py-16 md:py-32 bg-white px-4">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.span
                         initial="hidden"
